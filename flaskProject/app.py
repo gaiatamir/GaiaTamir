@@ -1,21 +1,22 @@
-from flask import Flask, redirect, url_for
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 
 @app.route('/')
-def hello_world():
-    return 'Hello World!'
+def home_page():
+    return render_template('cv.html')
 
 
-@app.route('/yoga')
-def hello_yoga():
-    return redirect('/')
+@app.route('/ContactList')
+def contact_list():
+    return render_template('Contact List.html')
 
 
-@app.route('/menu')
-def hello_menu():
-    return redirect(url_for('hello_world'))
+@app.route('/assignement8')
+def assignement8_func():
+    user_1 = {'firstName': 'Gaia', 'lastName': 'Tamir', 'gender': 'female'}
+    return render_template('assignment8.html', user=user_1, hobbies=['yoga', 'running', 'beaching'])
 
 
 if __name__ == '__main__':

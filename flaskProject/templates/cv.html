@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <title>cv</title>
-    <link rel="stylesheet" href="cv.css">
+    <link rel="stylesheet" href="{{ "static/cv.css" }}">
     <meta name= "viewport" content="width=device-width, initial-scale=1.0">
     <style>
         div {text-align: center;}
     </style>
-    <script src="cv.js" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='cv.js') }}"></script>
 
 </head>
 <body>
@@ -17,16 +17,18 @@
         <h3> My name is Gaia Tamir, a third year student of Industrial Engineering and Management at Ben Gurion University </h3>
         <h4>25 years old, Yoga lover and teacher</h4>
 
+
     </div>
     <div class="row">
     <div class="Resume">
         <h3>Holds a matriculation certificate</h3>
-        <h3>tudying for a bachelor's degree in industrial engineering and management</h3>
+        <h3>studying for a bachelor's degree in industrial engineering and management</h3>
         <h3>took a yoga instructors course</h3>
+        <a id="hobbies" href="{{ url_for('assignement8_func') }}" target="_blank" ><u>My Hobbies</u></a>
     </div>
     <div class="Yoga">
         <h1>Yoga inspiration</h1>
-        <img src="yoga.jpg" alt="yoga pic">
+         <img class= "picture" src="{{ url_for('static', filename='yoga.jpg' )}}" alt="yogi pic">
     </div>
     </div>
     <div class="Contact">
@@ -42,7 +44,7 @@
     <br>
     <input type="submit">
              <br>
-            <a href="Contact%20List.html">Contact List</a>
+           <a href="{{ url_for('contact_list') }}" target="_blank" >Contact List</a>
             <br>
             <p>Date/Time: <span id="date">
                 <script type="text/javascript">

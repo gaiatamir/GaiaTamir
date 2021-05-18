@@ -70,3 +70,30 @@ url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACzCAYAAAD8MUK9AAAAGXRFWH
     bottom: 20%;
   }
 }
+
+   .header {
+       grid-area:header;
+        text-align:center;
+    font-weight: bold;
+     font-size: 70px;
+       background-color: darkseagreen;
+    }
+
+   .ass8{
+     grid-area:header;
+      text-align:center;
+       background-color: mediumaquamarine;
+   }
+
+    .female{
+        background-color:deeppink ;
+        padding: 80px;
+        text-align:center;
+
+    }
+    .male{
+        background-color:blue ;
+         padding: 80px;
+        text-align:center;
+
+    }

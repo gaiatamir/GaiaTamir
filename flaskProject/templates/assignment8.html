@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My   Hobbies</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='cv.css' )}}">
+
+</head>
+
+<body>
+<div class="ass8">
+{% include('header.html') %}
+
+{%  if user %}
+<h3> My Name:</h3>
+<h4 class="{% if user.gender =='female' %} female {% else %} male {% endif %}"> {{user.Salutation|upper}} {{ user.firstName }} {{ user.lastName }} </h4>
+<h3>Hobbies:</h3>
+<ul>
+{% for hobby in hobbies %}
+   <br> {{ hobby }}
+    {% endfor %}
+</ul>
+</div>
+{% endif %}
+</body>
+</html>
