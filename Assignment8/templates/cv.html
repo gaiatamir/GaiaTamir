@@ -24,7 +24,7 @@
         <h3>Holds a matriculation certificate</h3>
         <h3>studying for a bachelor's degree in industrial engineering and management</h3>
         <h3>took a yoga instructors course</h3>
-        <a id="hobbies" href="{{ url_for('assignement8_func') }}" target="_blank" ><u>My Hobbies</u></a>
+
     </div>
     <div class="Yoga">
         <h1>Yoga inspiration</h1>
@@ -51,6 +51,13 @@
     date();
 </script></span></p>
   <a href="https://www.linkedin.com/in/gaia-tamir-881831207">watch My Linkedin Profile</a>
+            <br>
+            <br>
+        <li><a href="{{ url_for('assignement8_func') }}">Assignment 8</a></li>
+            {% block hobbies %}
+        {% endblock %}
+        <br>
+        <br>
         </form>
     </div>
 </div>

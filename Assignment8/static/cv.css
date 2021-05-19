@@ -75,19 +75,20 @@ url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACzCAYAAAD8MUK9AAAAGXRFWH
        grid-area:header;
         text-align:center;
     font-weight: bold;
-     font-size: 70px;
-       background-color: darkseagreen;
+     font-size: 30px;
+       background-color:aliceblue;
     }
 
    .ass8{
      grid-area:header;
       text-align:center;
-       background-color: mediumaquamarine;
+       background-color: lightblue;
+       padding: 30px;
    }
 
     .female{
         background-color:deeppink ;
-        padding: 80px;
+        padding: 10px;
         text-align:center;
 
     }

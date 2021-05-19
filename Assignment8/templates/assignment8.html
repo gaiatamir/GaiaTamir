@@ -1,0 +1,17 @@
+{% extends "cv.html" %}
+      {% block hobbies%}
+
+<div class="ass8">
+{% include('header.html') %}
+
+{%  if user %}
+<h3> My Name:</h3>
+<h4 class="{% if user.gender =='female' %} female {% else %} male {% endif %}"> {{ user.lastName | upper}} {{ user.firstName |upper }}</h4>
+<ul>
+{% for hobby in hobbies %}
+   <br> {{ hobby }}
+    {% endfor %}
+</ul>
+</div>
+{% endif %}
+{% endblock %}
