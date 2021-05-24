@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ass9</title>
+</head>
+
+<body style="background-color:lightsteelblue; text-align: center; font-family: Calibri" >
+    {% if session.get('logged_in') %}
+        <h2>Hello {{ session.get('username') }}!</h2>
+        <form action="/log_out" method="GET" style="text-align: center;">
+        <br>
+            <button type="submit">Log Out</button>
+        </form>
+
+    {% else %}
+        <h2 style="color:white">Hello, Guest!</h2>
+        <div class="regisration">
+            <h2 style="color:white">Please Register</h2>
+            <form action="/assignment9" method="POST" style="
+                text-align: center;
+                width: 40%;
+                margin: auto;
+            ">
+                <label for="nickname" style="color: white">Choose Nick Name</label>
+                <label>
+                    <input name="nickname" type="text" required>
+                </label>
+                <br>
+                <br>
+                <br>
+                <label for="password" style="color: white">Choose Your Password</label>
+                <label>
+                    <input name="password" type="password" required>
+                </label>
+                <br>
+                <br>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    {% endif %}
+    <br>
+    <br>
+
+    <div class="search" style="text-align: center;">
+        <h2 style="color: white">Search Users</h2>
+        <form action="/assignment9" method="GET" style="text-align: center;">
+            <label>
+                <input type="text" name="searchfield" placeholder="Search..">
+            </label>
+            <button type="submit">Search</button>
+        </form>
+
+        <div>
+
+            {% if search %}
+                {% for user in users %}
+                    {% if user.email == search or user.first_name == search or user.last_name == search  %}
+                        <h3 style="color: black"> {{ user.email }}, {{ user.first_name }}, {{ user.last_name }}</h3>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+
+            {% if search =='' %}
+                <h2 style="color: white">You didnt search specific user-All Users:</h2>
+                {% for i in users %}
+                    <h3 style="color: black">{{ i.email }}, {{ i.first_name }}, {{ i.last_name }}</h3>
+                {% endfor %}
+            {% endif %}
+         </div>
+    </div>
+
+</body>
+</html>
